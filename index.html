@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual | 天体：太陽 - Pokonya Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ffcc00;
+            --primary-glow: rgba(255, 204, 0, 0.4);
+            --bg: #0f0f12;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --text: #e0e0e0;
+            --text-dim: #a0a0a0;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container { max-width: 800px; margin: 0 auto; }
+        
+        header { text-align: center; margin-bottom: 60px; }
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #fff 0%, #ffcc00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .subtitle { color: var(--text-dim); font-size: 1.1rem; }
+
+        .lang-switcher {
+            display: flex; justify-content: center; gap: 10px; margin-bottom: 40px;
+        }
+        .lang-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .lang-btn.active {
+            background: var(--primary);
+            color: #000;
+            border-color: var(--primary);
+            font-weight: 600;
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
+
+        section {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            display: none;
+        }
+        section.active { display: block; animation: fadeIn 0.5s ease-out; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 { font-family: 'Outfit', sans-serif; font-size: 1.4rem; margin-bottom: 20px; margin-top: 30px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+        h2:first-child { margin-top: 0; }
+        
+        .step { margin-bottom: 20px; }
+        .step-num {
+            display: inline-block;
+            background: var(--primary);
+            color: #000;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            text-align: center;
+            font-weight: bold;
+            line-height: 24px;
+            margin-right: 12px;
+            font-size: 0.9rem;
+        }
+        
+        .note {
+            background: rgba(255, 204, 0, 0.1);
+            border-left: 4px solid var(--primary);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+
+        .note-green {
+            background: rgba(39, 174, 96, 0.1);
+            border-left: 4px solid #27ae60;
+        }
+
+        .link-btn {
+            display: inline-block;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            padding: 12px 24px;
+            border: 1px solid var(--primary);
+            border-radius: 30px;
+            transition: all 0.2s;
+            margin-top: 20px;
+        }
+        .link-btn:hover {
+            background: var(--primary);
+            color: #000;
+        }
+
+        footer { text-align: center; color: var(--text-dim); margin-top: 60px; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <p style="color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;">Pokonya Presents</p>
+            <h1>天体：太陽 (Celestial Body: Sun)</h1>
+            <p class="subtitle">Shinano (しなの) Compatible Accessory</p>
+        </header>
+
+        <div class="lang-switcher">
+            <button class="lang-btn active" onclick="switchLang('jp')">JP</button>
+            <button class="lang-btn" onclick="switchLang('en')">EN</button>
+            <button class="lang-btn" onclick="switchLang('ko')">KO</button>
+            <button class="lang-btn" onclick="switchLang('zh')">ZH</button>
+        </div>
+
+        <!-- JAPANESE -->
+        <section id="lang-jp" class="active">
+            <h2>🚀 導入手順</h2>
+            <div class="step">
+                <p><span class="step-num">1</span> <b>UnityPackageのインポート</b><br>
+                ダウンロードしたUnityPackageをプロジェクトにインポートします。</p>
+            </div>
+            <div class="step">
+                <p><span class="step-num">2</span> <b>Prefabの配置</b><br>
+                アバター（しなの等）の直下に `Sun_Headgear_Shinano` Prefabをドラッグ＆ドロップしてください。</p>
+            </div>
+            <div class="step">
+                <p><span class="step-num">3</span> <b>自動設定完了</b><br>
+                Modular Avatar (MA) により設定が自動的にアバターに統合されます。</p>
+            </div>
+
+            <h2>🛠 調整方法</h2>
+            <div class="note">
+                プレハブ内のオブジェクト（メッシュ）を<b>有効（アクティブ）にして見える状態にしてから</b>、アバターの頭のサイズや位置に合わせて以下の調整を行ってください。<br>
+                ※アップロードする前に、忘れずに元の<b>非表示（無効）状態に戻して</b>ください。
+            </div>
+
+            <h2>💡 他のアバターで使用する場合</h2>
+            <div class="note note-green">
+                本製品は「しなの」ちゃんを基準に制作しており、<b>非常に高い「もちふぃったー」適正</b>を持っています。<br>
+                他のアバターに導入する際は、もちふぃったーを使用してフィッティングすることを強くお勧めします！
+            </div>
+
+            <h2>🎮 メニューからの起動</h2>
+            <div class="note">
+                ⚠️ 本製品は初期状態では非表示になっています。<br>
+                VRChat内でExpression Menuを開き、<code>Sun</code>（または Pokonya）項目からスイッチをONにすることで太陽が出現します！
+            </div>
+
+            <div style="text-align: center;">
+                <a href="terms.html" class="link-btn">📖 利用規約を確認する</a>
+            </div>
+        </section>
+
+        <!-- ENGLISH -->
+        <section id="lang-en">
+            <h2>🚀 Installation Steps</h2>
+            <div class="step">
+                <p><span class="step-num">1</span> <b>Import UnityPackage</b><br>
+                Import the downloaded UnityPackage into your project.</p>
+            </div>
+            <div class="step">
+                <p><span class="step-num">2</span> <b>Place the Prefab</b><br>
+                Drag and drop the `Sun_Headgear_Shinano` prefab directly onto your avatar.</p>
+            </div>
+            <div class="step">
+                <p><span class="step-num">3</span> <b>Auto Integration</b><br>
+                Modular Avatar (MA) automatically integrates settings into your avatar.</p>
+            </div>
+
+            <h2>🛠 How to Adjust</h2>
+            <div class="note">
+                Temporarily <b>enable (activate) the mesh object</b> inside the prefab to make it visible. Adjust its size and position to fit the avatar's head.<br>
+                * Do not forget to <b>disable (hide) it again</b> before uploading!
+            </div>
+
+            <h2>💡 Using with Other Avatars</h2>
+            <div class="note note-green">
+                This product is designed based on "Shinano", but it has <b>extremely high "Mochifitter" suitability</b>.<br>
+                When applying to other avatars, we strongly recommend using Mochifitter for fitting!
+            </div>
+
+            <h2>🎮 Toggle from Menu</h2>
+            <div class="note">
+                ⚠️ This product is hidden by default.<br>
+                Open the Expression Menu in VRChat and turn ON the <code>Sun</code> (or Pokonya) toggle to make the sun appear!
+            </div>
+
+            <div style="text-align: center;">
+                <a href="terms.html" class="link-btn">📖 Check Terms of Use</a>
+            </div>
+        </section>
+
+        <!-- KOREAN -->
+        <section id="lang-ko">
+            <h2>🚀 도입 순서</h2>
+            <div class="step">
+                <p><span class="step-num">1</span> <b>UnityPackage 임포트</b><br>
+                다운로드한 UnityPackage를 프로젝트에 임포트합니다.</p>
+            </div>
+            <div class="step">
+                <p><span class="step-num">2</span> <b>Prefab 배치</b><br>
+                아바타 직하위에 `Sun_Headgear_Shinano` Prefab을 드래그 앤 드롭하세요.</p>
+            </div>
+            <div class="step">
+                <p><span class="step-num">3</span> <b>자동 설정 완료</b><br>
+                Modular Avatar (MA)를 통해 설정이 자동으로 통합됩니다.</p>
+            </div>
+
+            <h2>🛠 조정 방법</h2>
+            <div class="note">
+                프리팹 내부의 오브젝트(메시)를 <b>활성화하여 보이게 한 후</b>, 아바타 머리에 맞게 크기와 위치를 조정해 주세요.<br>
+                ※ 업로드하기 전에 잊지 말고 원래의 <b>비활성화(숨김) 상태로 되돌려</b> 주세요!
+            </div>
+
+            <h2>💡 다른 아바타에 사용할 경우</h2>
+            <div class="note note-green">
+                본 제품은 "시나노"를 기준으로 제작되었으나, <b>매우 높은 "모치피터(Mochifitter)" 적합성</b>을 가지고 있습니다.<br>
+                다른 아바타에 적용할 때는 모치피터를 사용하여 피팅하는 것을 강력히 권장합니다!
+            </div>
+
+            <h2>🎮 메뉴에서 실행</h2>
+            <div class="note">
+                ⚠️ 본 제품은 초기 상태에서는 숨겨져 있습니다.<br>
+                VRChat 내에서 Expression Menu를 열고, <code>Sun</code> (또는 Pokonya) 항목에서 스위치를 ON으로 설정하면 태양이 나타납니다!
+            </div>
+
+            <div style="text-align: center;">
+                <a href="terms.html" class="link-btn">📖 이용 약관 확인</a>
+            </div>
+        </section>
+
+        <!-- CHINESE -->
+        <section id="lang-zh">
+            <h2>🚀 安装步骤</h2>
+            <div class="step">
+                <p><span class="step-num">1</span> <b>导入 UnityPackage</b><br>
+                将下载好的 UnityPackage 导入到项目中。</p>
+            </div>
+            <div class="step">
+                <p><span class="step-num">2</span> <b>放置 Prefab</b><br>
+                将 `Sun_Headgear_Shinano` Prefab 直接拖放到您的角色下。</p>
+            </div>
+            <div class="step">
+                <p><span class="step-num">3</span> <b>自动设置完成</b><br>
+                通过 Modular Avatar (MA)，设置将自动集成到您的角色中。</p>
+            </div>
+
+            <h2>🛠 调整方法</h2>
+            <div class="note">
+                请暂时<b>启用预制件内的对象（网格）使其可见</b>，然后根据角色头部调整大小和位置。<br>
+                ※ 在上传前，请不要忘记将其<b>恢复为隐藏（禁用）状态</b>！
+            </div>
+
+            <h2>💡 在其他模型上使用时</h2>
+            <div class="note note-green">
+                本产品以“Shinano（しなの）”为基准制作，但具有<b>极高的“Mochifitter”适配性</b>。<br>
+                在安装到其他模型时，强烈建议使用 Mochifitter 进行适配调整！
+            </div>
+
+            <h2>🎮 从菜单启用</h2>
+            <div class="note">
+                ⚠️ 本产品默认状态为隐藏。<br>
+                在 VRChat 中打开 Expression Menu，并在 <code>Sun</code> (或 Pokonya) 选项中将开关设为 ON 即可让太阳出现！
+            </div>
+
+            <div style="text-align: center;">
+                <a href="terms.html" class="link-btn">📖 查看使用条款</a>
+            </div>
+        </section>
+
+        <footer>
+            &copy; 2026 Pokonya Shop. All Rights Reserved.
+        </footer>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            
+            document.getElementById('lang-' + lang).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
